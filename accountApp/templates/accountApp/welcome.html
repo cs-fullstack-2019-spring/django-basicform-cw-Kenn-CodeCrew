@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Welcome to {{ name }}'s Account</h1>
+
+<ul>
+{% for eachAccount in allAccounts %}
+    <li>{{eachAccount.name}} opened their account on {{eachAccount.dateTimeOpen}}.<br>
+        Checking:{{eachAccount.checking}}<br>
+        Savings:{{eachAccount.savings}}<br>
+        <a href="{% url 'add5' eachAccount.id %}">Add 5</a></li><br><br>
+{% endfor %}
+</ul>
+</body>
+</html>
